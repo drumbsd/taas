@@ -7,7 +7,7 @@ RUN apk add git --update && rm -rf /var/cache/apk/*
 RUN go get github.com/gorilla/mux
 RUN CGO_ENABLED=0 go build -o /opt/taas
 
-FROM alpine:3.14
+FROM scratch
 COPY --from=mother /opt/taas /opt/taas
 COPY insults.json /opt/insults.json
 EXPOSE 8080
