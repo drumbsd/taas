@@ -17,7 +17,7 @@ type Insult struct {
 }
 
 func getInsults() []Insult {
-	raw, err := ioutil.ReadFile("./insults.json")
+	raw, err := ioutil.ReadFile("/config/insults.json")
 	if err != nil {
 		panic(err)
 	}
